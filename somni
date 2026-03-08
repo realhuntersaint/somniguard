@@ -1,0 +1,10 @@
+somniguard/
+│
+├── README.md
+├── backend.py          # The main Python logic & AI suggestions
+├── requirements.txt    # Python dependencies
+├── templates/
+│   └── index.html      # The Frontend User Interface
+└── static/
+    ├── audio/          # Place sound files here (rain.mp3, white_noise.mp3)
+    └── style.css       # Styling
