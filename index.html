@@ -1,0 +1,67 @@
+This is the interface where users see charts (simulated), toggle sound effects, and log their data.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SomniGuard - Sleep Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body style="background-color: #1a202c; color: #e2e8f0; font-family: 'Segoe UI', sans-serif;">
+
+    <!-- Header -->
+    <nav style="padding: 1rem; text-align:center; border-bottom: 1px solid #4a5568;">
+        <h1>🌙 SomniGuard</h1>
+        <p>Rest well, sleep deep.</p>
+    </nav>
+
+    <div style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        
+        <!-- Main Stats -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+            <div style="background:#2d3748; padding:1.5rem; border-radius:10px; text-align:center;">
+                <h2>🛏️ Sleep Duration</h2>
+                <p id="current-duration">Tracking...</p>
+            </div>
+            <div style="background:#2d3748; padding:1.5rem; border-radius:10px; text-align:center;">
+                <h2>💤 Mood</h2>
+                <input type="range" id="mood-slider" min="1" max="10" value="5" style="width:80%">
+            </div>
+        </div>
+
+        <!-- Audio Control -->
+        <div style="background:#2d3748; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+            <h3>🎵 Soundscapes</h3>
+            <div id="audio-controls">
+                <button onclick="toggleAudio('rain')" class="btn-outline">Rain 🌧️</button>
+                <button onclick="toggleAudio('white-noise')" class="btn-outline">White Noise 🔊</button>
+            </div>
+            <audio id="audio-player" loop></audio>
+        </div>
+
+        <!-- Data & Suggestions -->
+        <div style="background:#2d3748; padding: 1.5rem; border-radius: 10px;">
+            <h3>📊 Today's Sleep Log</h3>
+            
+            <div style="margin-bottom: 1rem;">
+                <label>Bedtime:</label>
+                <input type="time" id="bedtime-input">
+            </div>
+            
+            <button onclick="submitSleepLog()" style="background:#48bb78; color:white; border:none; padding:0.5rem 1rem; border-radius:5px; cursor:pointer;">Log Tonight's Sleep</button>
+
+            <hr style="border-color: #4a5568;">
+            
+            <h3>💡 Smart Suggestions:</h3>
+            <div id="suggestions-box" style="background:#171923; padding: 1rem; border-left: 4px solid #48bb78; display:none;">
+                <!-- Suggestions injected here -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Load Flask Data Script -->
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
+
