@@ -1,0 +1,25 @@
+Dark mode is essential for sleep.
+body {
+    background-color: #121826; /* Very dark blue/black */
+    color: white;
+}
+.btn-outline {
+    background: transparent;
+    border: 1px solid #a0aec0;
+    color: #a0aec0;
+    padding: 8px 16px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-outline:hover {
+    background-color: #2d3748;
+    color: white;
+}
+input[type="time"] {
+    background: #000;
+    color: white;
+    border: 1px solid #4a5568;
+    padding: 5px;
+    border-radius: 5px;
+}
